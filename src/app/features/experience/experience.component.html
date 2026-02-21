@@ -1,0 +1,134 @@
+<section #experienceSection class="relative py-32 lg:py-48 bg-transparent text-white overflow-hidden z-20">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+        <!-- Cinematic Section Heading -->
+        <div class="text-center mb-32 md:mb-48">
+            <h2 #sectionTitle
+                class="text-[8vw] md:text-6xl font-black mb-8 leading-tight tracking-tighter opacity-0 translate-y-10 heading-glow visible">
+                My Journey
+            </h2>
+            <div #titleGlow class="h-px w-24 bg-brand-primary mx-auto mb-8 shadow-[0_0_15px_#00f0ff] opacity-0"></div>
+            <p #sectionSubtitle
+                class="text-xl md:text-2xl text-text-muted font-light tracking-widest uppercase opacity-0 translate-y-10">
+                Not Where I Worked — <span class="text-white italic">But What I Became There</span>
+            </p>
+        </div>
+
+        <!-- Career Evolution Timeline -->
+        <div class="relative max-w-5xl mx-auto">
+
+            <!-- Background Track (Dim) -->
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/5 transform md:-translate-x-1/2"></div>
+
+            <!-- Glowing Progress Line (Animated via GSAP) -->
+            <div #progressLine
+                class="absolute left-4 md:left-1/2 top-0 w-px bg-gradient-to-b from-brand-primary via-brand-secondary to-transparent transform md:-translate-x-1/2 shadow-[0_0_20px_rgba(0,240,255,0.8)] z-0 origin-top h-0 transition-shadow duration-500">
+            </div>
+
+            <!-- Chapters (Experience Items) -->
+            <div class="space-y-40 md:space-y-64">
+                <div *ngFor="let exp of experiences; let i = index" #experienceItem
+                    class="relative flex flex-col md:flex-row items-start justify-between group"
+                    [ngClass]="{'md:flex-row-reverse': i % 2 !== 0}">
+
+                    <!-- Floating Date/Period -->
+                    <div class="hidden md:block absolute top-0 w-24 h-24 transform translate-y-4 opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                        [ngClass]="i % 2 === 0 ? '-left-32 text-right' : '-right-32 text-left'">
+                        <span class="text-sm font-mono tracking-tighter text-text-muted block">{{ exp.period }}</span>
+                    </div>
+
+                    <!-- Glowing Node Pin -->
+                    <div class="absolute left-4 md:left-1/2 top-0 z-10">
+                        <div class="node-pulse relative flex items-center justify-center transform -translate-x-1/2">
+                            <!-- Inner Core -->
+                            <div class="w-4 h-4 rounded-full bg-brand-primary shadow-[0_0_15px_#00f0ff] z-20"></div>
+                            <!-- Pulsing Halo (GSAP or CSS) -->
+                            <div
+                                class="absolute w-8 h-8 rounded-full border border-brand-primary/50 animate-ping opacity-20">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Narrative Card -->
+                    <div class="ml-12 md:ml-0 md:w-[45%] chapter-card opacity-0 -translate-x-10"
+                        [ngClass]="{'md:translate-x-10': i % 2 !== 0}">
+
+                        <div (click)="toggleExp(i)"
+                            class="glass-panel p-8 md:p-12 rounded-3xl border-l-2 border-l-brand-primary hover:border-l-brand-secondary cursor-pointer hover:bg-white/[0.03] transition-all duration-500 relative group/card overflow-hidden">
+
+                            <!-- Card Hover Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity">
+                            </div>
+
+                            <span class="block text-brand-primary font-mono text-xs tracking-widest uppercase mb-4">{{
+                                exp.period }}</span>
+
+                            <h3
+                                class="text-3xl md:text-4xl font-bold mb-2 group-hover/card:text-brand-primary transition-colors">
+                                {{ exp.role }}
+                            </h3>
+
+                            <div class="text-xl text-white/80 font-medium mb-6">
+                                {{ exp.company }} — <span class="text-text-muted italic font-light italic">Career
+                                    Evolution</span>
+                            </div>
+
+                            <p class="text-lg text-text-muted leading-relaxed font-light mb-8 italic">
+                                “{{ exp.narrative }}”
+                            </p>
+
+                            <!-- Animated Bullets -->
+                            <ul class="space-y-4 border-t border-white/10 pt-8"
+                                [ngClass]="{'max-h-0 opacity-0 overflow-hidden': !expandedStates[i], 'max-h-[500px] opacity-100': expandedStates[i]}">
+                                <li *ngFor="let point of exp.points" class="flex items-start gap-3 group/point">
+                                    <div
+                                        class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-primary group-hover/point:shadow-[0_0_8px_#00f0ff] transition-shadow">
+                                    </div>
+                                    <span
+                                        class="text-text-muted text-base leading-snug group-hover/point:text-white transition-colors">
+                                        {{ point }}
+                                    </span>
+                                </li>
+                            </ul>
+
+                            <!-- Tech Stack Glow Tags -->
+                            <div class="flex flex-wrap gap-2 mt-8">
+                                <span *ngFor="let tech of exp.tech"
+                                    class="px-3 py-1 text-[10px] rounded-full border border-white/5 bg-white/5 text-text-muted transition-all hover:border-brand-primary/50 hover:text-brand-primary hover:box-glow">
+                                    {{ tech }}
+                                </span>
+                            </div>
+
+                            <!-- Expand Indicator -->
+                            <div
+                                class="mt-6 flex items-center gap-2 text-xs font-mono text-brand-primary/60 group-hover/card:text-brand-primary uppercase tracking-tighter transition-colors">
+                                <span>{{ expandedStates[i] ? 'Minimize' : 'View Full Chapter' }}</span>
+                                <svg class="w-4 h-4 transition-transform duration-300"
+                                    [ngClass]="{'rotate-180': expandedStates[i]}" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Perspective Gap -->
+                    <div class="hidden md:block md:w-[45%]"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Closing Statement -->
+        <div #journeyEnd class="mt-48 text-center opacity-0 translate-y-20">
+            <h4 class="text-2xl md:text-3xl font-light italic text-text-muted">
+                Every step built the <span class="text-white font-bold">next version of me.</span>
+            </h4>
+        </div>
+
+    </div>
+</section>

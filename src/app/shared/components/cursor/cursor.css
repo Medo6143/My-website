@@ -1,0 +1,17 @@
+/* Cursor Styles */
+
+body {
+    cursor: none;
+    /* Hide default cursor globally */
+}
+
+a,
+button,
+.service-card,
+.glass-panel {
+    cursor: none !important;
+}
+
+.cursor-outer {
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+}

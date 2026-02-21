@@ -1,0 +1,25 @@
+/* About Story Aesthetics */
+.narrative-container {
+    perspective: 1000px;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.orbit-node {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.orbit-node:hover {
+    transform: scale(1.3) rotate(0deg) !important;
+    background: rgba(0, 240, 255, 0.1);
+    border-color: rgba(0, 240, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.heading-glow {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}

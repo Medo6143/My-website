@@ -1,0 +1,141 @@
+<section #aboutSection class="relative py-32 lg:py-48 min-h-screen bg-transparent text-white overflow-hidden z-20"
+    (mousemove)="onMouseMove($event)">
+
+    <!-- Interactive Background Spotlight Environment -->
+    <div class="absolute inset-0 pointer-events-none z-0">
+        <!-- Spotlight that follows the mouse -->
+        <div #spotlight
+            class="absolute w-[40vw] h-[40vw] min-w-[500px] min-h-[500px] rounded-full bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.06)_0%,transparent_60%)] mix-blend-screen filter blur-[60px] opacity-0 transition-opacity duration-1000 -translate-x-1/2 -translate-y-1/2">
+        </div>
+
+        <!-- Deep Grid -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [transform:perspective(1000px)_rotateX(60deg)_translateY(-100px)_translateZ(-200px)] opacity-30 pointer-events-none">
+        </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+
+        <!-- The Hook Title -->
+        <div class="text-center mb-24">
+            <h2 #hookTitle
+                class="text-3xl md:text-5xl lg:text-6xl font-light tracking-widest text-white opacity-0 filter blur-[10px] heading-glow visible">
+                Who is behind the code?
+            </h2>
+            <div #titleGlowLine class="h-[2px] w-0 bg-brand-primary mx-auto mt-6 shadow-[0_0_15px_#00f0ff] opacity-0">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+            <!-- The Narrative Origin Story -->
+            <!-- The Narrative Origin Story -->
+            <div #storyContent class="flex flex-col justify-center narrative-container text-left gap-0">
+                <div class="mb-8">
+                    <p
+                        class="story-line text-2xl lg:text-3xl font-black italic text-brand-primary opacity-0 -translate-x-10">
+                        I don't just write code.
+                    </p>
+                    <p class="story-line text-3xl lg:text-4xl font-black text-white opacity-0 -translate-x-10 mt-2">
+                        I design experiences.
+                    </p>
+                </div>
+
+                <div class="mb-8 text-text-muted text-lg lg:text-xl font-light leading-relaxed space-y-4">
+                    <p class="story-line opacity-0 -translate-x-10 text-white font-bold">
+                        Frontend Developer with a focus on building responsive, user-friendly web interfaces.
+                    </p>
+                    <p class="story-line opacity-0 -translate-x-10">
+                        Skilled in modern technologies with a passion for clean design and <span
+                            class="text-brand-primary">performance optimization</span> for an <span
+                            class="text-brand-primary">easy</span>, fast experience.
+                    </p>
+                    <p class="story-line opacity-0 -translate-x-10">
+                        Adept at translating designs into functional code, making complex UI challenges <span
+                            class="text-white">easy</span> to solve through intuitive logic.
+                    </p>
+                    <p class="story-line opacity-0 -translate-x-10">
+                        Continuously learning new tools to stay current and bring impactful digital products to life.
+                    </p>
+                    <p class="story-line opacity-0 -translate-x-10">
+                        Seeking an opportunity to contribute to great products while growing as a developer.
+                    </p>
+                </div>
+
+                <div class="mb-6 pt-6 border-t border-white/10">
+                    <p class="story-line text-white text-xl font-bold opacity-0 -translate-x-10 italic">
+                        "I don't just build interfaces... I build digital worlds that are <span
+                            class="text-brand-primary">easy</span> to explore."
+                    </p>
+                </div>
+
+                <!-- Summary Pillars -->
+                <div #pillarsGrid class="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
+                    <div *ngFor="let pillar of pillars"
+                        class="pillar-card p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-primary/40 transition-all duration-500 group">
+                        <h4 class="text-base font-bold mb-1 group-hover:text-brand-primary transition-colors">{{
+                            pillar.title }}</h4>
+                        <p class="text-text-muted text-[10px] leading-relaxed">{{ pillar.desc }}</p>
+                    </div>
+                </div>
+
+                <!-- CV Download Button -->
+                <div class="story-line opacity-0 mt-0">
+                    <a href="/mohamed-wael-cv.pdf" download
+                        class="inline-flex items-center gap-4 px-8 py-4 bg-transparent border border-brand-primary/40 rounded-full hover:bg-brand-primary/10 hover:border-brand-primary hover:shadow-[0_0_20px_rgba(0,240,255,0.2)] transition-all duration-300 group/cv">
+                        <span class="text-white font-bold uppercase tracking-widest text-xs">
+                            Download CV</span>
+                        <svg class="w-5 h-5 text-brand-primary group-hover:translate-y-1 transition-transform duration-300"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Hologram Orbit System (Skills/Tech Stack) -->
+            <div #orbitSystem
+                class="relative h-[400px] w-full lg:h-[600px] flex items-center justify-center perspective-1000 opacity-0 scale-90">
+
+                <!-- Core Logo/Avatar -->
+                <div
+                    class="absolute w-24 h-24 lg:w-32 lg:h-32 rounded-full glass-panel flex items-center justify-center z-20 shadow-[0_0_40px_rgba(0,240,255,0.3)] border-brand-primary/50 bg-black/80 backdrop-blur-xl group overflow-hidden">
+                    <img src="assets/me.png" alt="Mohamed Wael"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors">
+                    </div>
+                    <span class="absolute text-2xl lg:text-4xl font-black text-white/20 pointer-events-none">MW</span>
+                </div>
+
+                <!-- Orbit Ring 1 (Inner) -->
+                <div
+                    class="absolute w-[250px] h-[250px] lg:w-[350px] lg:h-[350px] rounded-full border border-white/10 border-dashed animate-[spin_20s_linear_infinite] z-10 [transform-style:preserve-3d]">
+                    <div
+                        class="orbit-node absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black border border-brand-primary/30">
+                        <span class="text-brand-primary font-bold text-xs">React</span>
+                    </div>
+                </div>
+
+                <!-- Orbit Ring 2 (Outer) -->
+                <div
+                    class="absolute w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] rounded-full border border-white/5 animate-[spin_35s_linear_infinite_reverse] z-0 [transform-style:preserve-3d]">
+                    <div
+                        class="orbit-node absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center bg-black border border-white/10">
+                        <span class="text-white/60 font-bold text-xs">Angular</span>
+                    </div>
+                    <div
+                        class="orbit-node absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center bg-black border border-white/10">
+                        <span class="text-white/60 font-bold text-[10px]">TS</span>
+                    </div>
+                </div>
+
+                <!-- Base Projection -->
+                <div
+                    class="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-64 h-12 bg-brand-primary/20 mix-blend-screen filter blur-[30px] rounded-full">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,139 @@
+<section #skillsSection class="relative py-32 lg:py-48 bg-transparent text-white overflow-hidden z-20">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+        <!-- Cinematic Title Reveal -->
+        <div class="text-center mb-24 md:mb-32">
+            <h2 #sectionTitle
+                class="text-[8vw] md:text-5xl font-black mb-6 leading-tight tracking-tighter uppercase heading-glow visible">
+                Skills & Capabilities
+            </h2>
+            <p #sectionSubtitle class="text-lg md:text-xl text-text-muted font-light tracking-[0.2em] uppercase">
+                The Systems Behind <span class="text-white italic">My Digital Worlds</span>
+            </p>
+        </div>
+
+        <!-- Skills Systems Matrix -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 relative">
+
+            <!-- Background Energy Radar Decoration -->
+            <div
+                class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden">
+                <div class="w-[600px] h-[600px] border border-brand-primary/20 rounded-full animate-ping"></div>
+                <div class="absolute w-[400px] h-[400px] border border-brand-secondary/20 rounded-full animate-pulse">
+                </div>
+                <div class="absolute w-px h-full bg-gradient-to-b from-transparent via-brand-primary to-transparent">
+                </div>
+            </div>
+
+            <!-- Category Systems -->
+            <div *ngFor="let category of skillCategories; let i = index" #categoryCard
+                class="glass-panel p-8 rounded-[2rem] border-t border-white/5 hover:border-brand-primary/30 transition-all duration-500 relative group/system">
+
+                <!-- System ID -->
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-[10px] font-mono tracking-widest text-brand-primary/60 uppercase">System_0{{ i + 1
+                        }}</span>
+                    <div class="w-2 h-2 rounded-full bg-brand-primary animate-pulse shadow-[0_0_10px_#00f0ff]"></div>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-2 group-hover/system:text-brand-primary transition-colors">{{
+                    category.title }}</h3>
+                <p class="text-xs text-text-muted mb-8 font-light italic leading-relaxed">{{ category.description }}</p>
+
+                <!-- Individual Skill Nodes -->
+                <div class="space-y-6">
+                    <div *ngFor="let skill of category.skills" (mouseenter)="onSkillHover(skill)"
+                        (mouseleave)="onSkillLeave()" class="skill-node cursor-crosshair group/skill">
+
+                        <div class="flex justify-between items-end mb-2">
+                            <span
+                                class="text-sm font-medium tracking-wide group-hover/skill:text-white transition-colors">{{
+                                skill.name }}</span>
+                            <span class="text-[10px] font-mono text-text-muted">{{ skill.level }}%_ACTV</span>
+                        </div>
+
+                        <!-- Energy Line Activation -->
+                        <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden relative">
+                            <!-- Activation Fill -->
+                            <div #skillBar [attr.data-level]="skill.level"
+                                class="h-full bg-gradient-to-r from-brand-secondary to-brand-primary relative shadow-[0_0_15px_rgba(0,240,255,0.6)]">
+                                <!-- Moving Glow Particle -->
+                                <div class="absolute top-0 right-0 h-full w-4 bg-white/40 blur-[2px] animate-shimmer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-time Power Metrics Panel (Game Style) -->
+        <div class="mt-20 md:mt-32 max-w-4xl mx-auto">
+            <div
+                class="glass-panel p-10 md:p-12 rounded-[2.5rem] border border-white/10 relative overflow-hidden min-h-[250px] flex items-center justify-center">
+
+                <!-- Default Placeholder State -->
+                <div *ngIf="!activeSkill" class="text-center animate-pulse">
+                    <p class="text-sm font-mono tracking-widest text-brand-primary uppercase">Waiting for System
+                        Selection...</p>
+                    <p class="text-xs text-text-muted mt-2">Hover over a specialized skill to view core diagnostics.</p>
+                </div>
+
+                <!-- Active Activation Diagnostics -->
+                <div *ngIf="activeSkill"
+                    class="w-full flex flex-col md:flex-row items-center gap-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+
+                    <!-- Icon/Level Gauge (Visualization) -->
+                    <div class="relative w-32 h-32 flex items-center justify-center">
+                        <svg class="w-full h-full -rotate-90">
+                            <circle cx="64" cy="64" r="60" fill="none" class="stroke-white/5" stroke-width="4"></circle>
+                            <circle cx="64" cy="64" r="60" fill="none" class="stroke-brand-primary" stroke-width="4"
+                                stroke-dasharray="377" [attr.stroke-dashoffset]="377 - (377 * activeSkill.level / 100)"
+                                style="transition: stroke-dashoffset 0.8s ease-out;"></circle>
+                        </svg>
+                        <div class="absolute flex flex-col items-center">
+                            <span class="text-3xl font-black">{{ activeSkill.level }}</span>
+                            <span class="text-[8px] font-mono uppercase text-brand-primary">Power</span>
+                        </div>
+                    </div>
+
+                    <!-- Diagnostics Grid -->
+                    <div class="flex-1 grid grid-cols-2 md:grid-cols-3 gap-8">
+                        <div>
+                            <span
+                                class="block text-[10px] font-mono text-brand-primary uppercase tracking-widest mb-1">Time_Deployed</span>
+                            <span class="text-2xl font-bold">{{ activeSkill.years }}+ <small
+                                    class="text-xs font-light text-text-muted uppercase">Years</small></span>
+                        </div>
+                        <div>
+                            <span
+                                class="block text-[10px] font-mono text-brand-primary uppercase tracking-widest mb-1">Engram_Projects</span>
+                            <span class="text-2xl font-bold">{{ activeSkill.projects }}+ <small
+                                    class="text-xs font-light text-text-muted uppercase">Units</small></span>
+                        </div>
+                        <div class="col-span-2 md:col-span-1">
+                            <span
+                                class="block text-[10px] font-mono text-brand-primary uppercase tracking-widest mb-1">Primary_Sector</span>
+                            <span class="text-lg font-medium leading-tight text-white/90">{{ activeSkill.usage }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Scanning Lines decoration -->
+                    <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-5">
+                        <div class="w-full h-px bg-white animate-scan-up"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Capability Narrative -->
+        <div class="mt-24 text-center max-w-2xl mx-auto">
+            <p class="text-xl md:text-2xl text-text-muted font-light leading-relaxed">
+                "These are not just tools. They’re the <span class="text-white font-bold">systems</span> I use to build
+                digital worlds."
+            </p>
+        </div>
+
+    </div>
+</section>
