@@ -192,7 +192,7 @@ export class HeroComponent implements AfterViewInit {
     private initFrameworkCycle() {
         if (!this.frameworkText) return;
         const gsap = this.gsapService.gsap;
-        const roles = ["React Developer.", "Angular Developer.", "Frontend Architect."];
+        const roles = ["React Developer.", "Angular Developer.", "Front-End Developer."];
         let currentIndex = 0;
 
         const cycle = () => {

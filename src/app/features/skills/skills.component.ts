@@ -54,6 +54,16 @@ export class SkillsComponent implements AfterViewInit {
             ]
         },
         {
+            title: 'Backend & Database',
+            description: 'The engine room where data and logic converge.',
+            skills: [
+                { name: 'Node.js', level: 85, years: 2, projects: 12, usage: 'Server-Side Logic' },
+                { name: 'Express', level: 88, years: 2, projects: 10, usage: 'API Routing' },
+                { name: 'MongoDB', level: 82, years: 1, projects: 8, usage: 'NoSQL Architecture' },
+                { name: 'Postman', level: 90, years: 3, projects: 20, usage: 'API Testing' }
+            ]
+        },
+        {
             title: 'Tools & Ecosystem',
             description: 'Specialized gear for professional workflows.',
             skills: [
