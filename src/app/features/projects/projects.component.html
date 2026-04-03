@@ -1,9 +1,9 @@
-<section #projectsSection class="relative bg-transparent text-white overflow-hidden z-20">
+<section #projectsSection class="relative bg-transparent text-text-main overflow-hidden z-20">
 
     <!-- Cinematic Title Scene (Sticky before scroll starts) -->
     <div class="h-screen w-full flex flex-col items-center justify-center relative z-10 px-6">
         <h2 #sectionTitle
-            class="text-[12vw] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 opacity-0 scale-50 heading-glow visible">
+            class="text-[12vw] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-text-main to-transparent opacity-0 scale-50 heading-glow visible">
             Selected Works
         </h2>
         <div #titleSubtitle class="mt-8 flex flex-col items-center opacity-0 translate-y-10">
@@ -26,11 +26,11 @@
 
             <!-- Movie Poster Cards -->
             <div *ngFor="let project of projects; let i = index" #projectCard
-                class="group relative w-[80vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[70vh] rounded-3xl overflow-hidden cursor-none shadow-[0_0_40px_rgba(0,0,0,0.8)] border border-white/10 shrink-0"
+                class="group relative w-[80vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[70vh] rounded-3xl overflow-hidden cursor-none glass-panel border-text-muted/20 shrink-0"
                 (mouseenter)="onCardHover($event, i)" (mouseleave)="onCardLeave()">
 
                 <!-- Project Visual (Icon instead of Image) -->
-                <div class="absolute inset-0 bg-black z-0 overflow-hidden flex items-center justify-center">
+                <div class="absolute inset-0 bg-bg-dark z-0 overflow-hidden flex items-center justify-center">
                     <!-- Dynamic Glowing Icon -->
                     <div
                         class="relative group-hover:scale-110 transition-transform duration-700 ease-out z-10 flex items-center justify-center w-full h-full">
@@ -41,7 +41,7 @@
 
                         <!-- The Icon -->
                         <div
-                            class="relative z-20 text-white/20 group-hover:text-brand-primary transition-all duration-700 flex items-center justify-center">
+                            class="relative z-20 text-text-muted opacity-20 group-hover:opacity-100 group-hover:text-brand-primary transition-all duration-700 flex items-center justify-center">
                             <!-- Messages Icon -->
                             <svg *ngIf="project.icon === 'messages'"
                                 class="w-32 h-32 md:w-48 md:h-48 drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]" fill="none"
@@ -111,6 +111,13 @@
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                                 </path>
                             </svg>
+                            <!-- Mosque Icon -->
+                            <svg *ngIf="project.icon === 'mosque'"
+                                class="w-32 h-32 md:w-48 md:h-48 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]" fill="none"
+                                stroke="currentColor" viewBox="0 0 64 64">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M32 4l-4 4v4h-6v6h-6v34h32V18h-6v-6h-6V8l-4-4zM32 4V8h4v4h4v6h4v34H12V18h4v-6h4V8h4V4h4zM24 32h16v16H24V32z" />
+                            </svg>
                             <!-- Film Icon -->
                             <svg *ngIf="project.icon === 'film'"
                                 class="w-32 h-32 md:w-48 md:h-48 drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]" fill="none"
@@ -130,7 +137,7 @@
 
                 <!-- Dark Overlay Gradient -->
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-10 opacity-90 group-hover:opacity-70 transition-opacity duration-500">
+                    class="absolute inset-0 bg-gradient-to-t from-bg-dark to-transparent z-10 opacity-90 group-hover:opacity-70 transition-opacity duration-500">
                 </div>
 
                 <!-- Content Layer (Parallax Depth) -->
@@ -148,7 +155,7 @@
 
                     <!-- Title -->
                     <h3
-                        class="text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                        class="text-4xl md:text-6xl font-black mb-4 tracking-tight drop-shadow-[0_0_15px_var(--text-primary)]">
                         {{ project.title }}
                     </h3>
 
@@ -166,9 +173,9 @@
                         <a [href]="project.demoUrl" target="_blank"
                             class="relative px-8 py-4 bg-brand-primary/10 border border-brand-primary rounded-full overflow-hidden flex items-center gap-3 group/btn hover:bg-brand-primary hover:shadow-[0_0_30px_#00f0ff] transition-all duration-300">
                             <span
-                                class="relative z-10 text-white font-bold uppercase tracking-widest text-sm group-hover/btn:text-black transition-colors">Launch
+                                class="relative z-10 text-text-main font-bold uppercase tracking-widest text-sm group-hover/btn:text-bg-dark transition-colors">Launch
                                 Experience</span>
-                            <svg class="w-5 h-5 relative z-10 text-brand-primary group-hover/btn:text-black group-hover/btn:animate-pulse"
+                            <svg class="w-5 h-5 relative z-10 text-brand-primary group-hover/btn:text-bg-dark group-hover/btn:animate-pulse"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -177,13 +184,13 @@
 
                         <!-- Terminal Code Button -->
                         <a [href]="project.codeUrl" target="_blank"
-                            class="relative px-6 py-4 glass-panel border-white/20 hover:border-white/60 flex items-center gap-3 group/code overflow-hidden transition-colors">
+                            class="relative px-6 py-4 glass-panel hover:border-text-muted/60 flex items-center gap-3 group/code overflow-hidden transition-colors">
                             <div
-                                class="absolute inset-0 bg-white/5 translate-y-full group-hover/code:translate-y-0 transition-transform duration-300">
+                                class="absolute inset-0 bg-text-muted/10 translate-y-full group-hover/code:translate-y-0 transition-transform duration-300">
                             </div>
                             <span
-                                class="relative z-10 font-mono text-sm text-text-muted group-hover/code:text-white transition-colors">~/source_code</span>
-                            <svg class="w-5 h-5 relative z-10 text-text-muted group-hover/code:text-white"
+                                class="relative z-10 font-mono text-sm text-text-muted group-hover/code:text-text-main transition-colors">~/source_code</span>
+                            <svg class="w-5 h-5 relative z-10 text-text-muted group-hover/code:text-text-main"
                                 fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -197,7 +204,7 @@
 
     <!-- Custom Cursor Overlay -->
     <div #customCursor
-        class="fixed top-0 left-0 w-32 h-32 rounded-full bg-white text-black font-bold uppercase tracking-widest text-[10px] flex items-center justify-center mix-blend-screen pointer-events-none opacity-0 scale-0 z-50 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-150 ease-out shadow-[0_0_30px_#fff]">
+        class="fixed top-0 left-0 w-32 h-32 rounded-full bg-text-main text-bg-dark font-bold uppercase tracking-widest text-[10px] flex items-center justify-center mix-blend-screen pointer-events-none opacity-0 scale-0 z-50 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-150 ease-out shadow-[0_0_30px_var(--text-primary)]">
         Explore
     </div>
 

@@ -92,7 +92,10 @@ export class LoaderComponent implements AfterViewInit {
                 opacity: 0,
                 duration: 1,
                 ease: 'power2.inOut',
-                display: 'none'
+                onComplete: () => {
+                    this.loaderBg.nativeElement.style.display = 'none';
+                    this.loaderBg.nativeElement.style.pointerEvents = 'none';
+                }
             });
     }
 }

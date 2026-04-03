@@ -2,7 +2,7 @@
 
     <!-- Outer trailing ring -->
     <div #cursorOuter
-        class="absolute w-12 h-12 border border-white/30 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 will-change-transform">
+        class="absolute w-12 h-12 border border-text-muted/30 rounded-full flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 will-change-transform">
         <span *ngIf="hoverText"
             class="text-[8px] font-mono font-bold text-brand-primary tracking-tighter opacity-0 animate-in fade-in duration-300">
             {{ hoverText }}
@@ -11,7 +11,7 @@
 
     <!-- Inner fast point -->
     <div #cursorInner
-        class="absolute w-1.5 h-1.5 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_#fff] will-change-transform">
+        class="absolute w-1.5 h-1.5 bg-text-main rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_var(--text-primary)] will-change-transform">
     </div>
 
 </div>

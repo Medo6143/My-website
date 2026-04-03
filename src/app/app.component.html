@@ -1,11 +1,56 @@
 <app-loader (loadingFinished)="onLoadingFinished()"></app-loader>
 <app-cursor></app-cursor>
 
-<div class="stars"></div>
-<div class="moon"></div>
-<app-navbar *ngIf="isLoaded" class="animate-fade-in"></app-navbar>
+<app-moon-scene [isLoaded]="isLoaded"></app-moon-scene>
+<app-navbar *ngIf="isLoaded" class="animate-fade-in" style="position: relative; z-index: 9999;"></app-navbar>
 
-<main *ngIf="isLoaded" class="relative w-full overflow-hidden animate-fade-in">
+<!-- Guaranteed Floating Theme Toggle – z-index above everything -->
+<button
+  *ngIf="isLoaded"
+  (click)="themeService.toggleTheme()"
+  title="Toggle Light / Dark Mode"
+  style="
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 99999;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--brand-primary);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px var(--brand-glow), 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    pointer-events: all;
+  "
+  onmouseover="this.style.transform='scale(1.15)'"
+  onmouseout="this.style.transform='scale(1)'"
+>
+  <!-- Sun icon (dark mode → switch to light) -->
+  <svg *ngIf="!themeService.isLightMode()" width="24" height="24" fill="none" stroke="var(--brand-primary)" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
+  <!-- Moon icon (light mode → switch to dark) -->
+  <svg *ngIf="themeService.isLightMode()" width="24" height="24" fill="none" stroke="var(--brand-primary)" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</button>
+
+<main *ngIf="isLoaded" class="relative w-full animate-fade-in">
   <div id="smooth-wrapper">
     <div id="smooth-content">
       <app-hero id="hero"></app-hero>

@@ -1,4 +1,4 @@
-<section #skillsSection class="relative py-32 lg:py-48 bg-transparent text-white overflow-hidden z-20">
+<section #skillsSection class="relative py-32 lg:py-48 bg-transparent text-text-main overflow-hidden z-20">
 
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
@@ -9,7 +9,7 @@
                 Skills & Capabilities
             </h2>
             <p #sectionSubtitle class="text-lg md:text-xl text-text-muted font-light tracking-[0.2em] uppercase">
-                The Systems Behind <span class="text-white italic">My Digital Worlds</span>
+                The Systems Behind <span class="text-text-main italic">My Digital Worlds</span>
             </p>
         </div>
 
@@ -28,7 +28,7 @@
 
             <!-- Category Systems -->
             <div *ngFor="let category of skillCategories; let i = index" #categoryCard
-                class="glass-panel p-8 rounded-[2rem] border-t border-white/5 hover:border-brand-primary/30 transition-all duration-500 relative group/system">
+                class="glass-panel p-8 rounded-[2rem] border-t border-text-muted/20 hover:border-brand-primary/30 transition-all duration-500 relative group/system">
 
                 <!-- System ID -->
                 <div class="flex items-center justify-between mb-8">
@@ -48,16 +48,16 @@
 
                         <div class="flex justify-between items-end mb-2">
                             <span
-                                class="text-sm font-medium tracking-wide group-hover/skill:text-white transition-colors">{{
+                                class="text-sm font-medium tracking-wide group-hover/skill:text-text-main transition-colors">{{
                                 skill.name }}</span>
                             <span class="text-[10px] font-mono text-text-muted">{{ skill.level }}%_ACTV</span>
                         </div>
 
                         <!-- Energy Line Activation -->
-                        <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden relative">
+                        <div class="h-1.5 w-full bg-text-muted/20 rounded-full overflow-hidden relative">
                             <!-- Activation Fill -->
                             <div #skillBar [attr.data-level]="skill.level"
-                                class="h-full bg-gradient-to-r from-brand-secondary to-brand-primary relative shadow-[0_0_15px_rgba(0,240,255,0.6)]">
+                                class="h-full bg-gradient-to-r from-brand-secondary to-brand-primary relative shadow-[0_0_15px_var(--text-primary)]">
                                 <!-- Moving Glow Particle -->
                                 <div class="absolute top-0 right-0 h-full w-4 bg-white/40 blur-[2px] animate-shimmer">
                                 </div>
@@ -71,7 +71,7 @@
         <!-- Real-time Power Metrics Panel (Game Style) -->
         <div class="mt-20 md:mt-32 max-w-4xl mx-auto">
             <div
-                class="glass-panel p-10 md:p-12 rounded-[2.5rem] border border-white/10 relative overflow-hidden min-h-[250px] flex items-center justify-center">
+                class="glass-panel p-10 md:p-12 rounded-[2.5rem] relative overflow-hidden min-h-[250px] flex items-center justify-center">
 
                 <!-- Default Placeholder State -->
                 <div *ngIf="!activeSkill" class="text-center animate-pulse">
@@ -87,7 +87,7 @@
                     <!-- Icon/Level Gauge (Visualization) -->
                     <div class="relative w-32 h-32 flex items-center justify-center">
                         <svg class="w-full h-full -rotate-90">
-                            <circle cx="64" cy="64" r="60" fill="none" class="stroke-white/5" stroke-width="4"></circle>
+                            <circle cx="64" cy="64" r="60" fill="none" class="stroke-text-muted/20" stroke-width="4"></circle>
                             <circle cx="64" cy="64" r="60" fill="none" class="stroke-brand-primary" stroke-width="4"
                                 stroke-dasharray="377" [attr.stroke-dashoffset]="377 - (377 * activeSkill.level / 100)"
                                 style="transition: stroke-dashoffset 0.8s ease-out;"></circle>
@@ -115,13 +115,13 @@
                         <div class="col-span-2 md:col-span-1">
                             <span
                                 class="block text-[10px] font-mono text-brand-primary uppercase tracking-widest mb-1">Primary_Sector</span>
-                            <span class="text-lg font-medium leading-tight text-white/90">{{ activeSkill.usage }}</span>
+                            <span class="text-lg font-medium leading-tight text-text-main/90">{{ activeSkill.usage }}</span>
                         </div>
                     </div>
 
                     <!-- Scanning Lines decoration -->
                     <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-5">
-                        <div class="w-full h-px bg-white animate-scan-up"></div>
+                        <div class="w-full h-px bg-text-main animate-scan-up"></div>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
         <!-- Final Capability Narrative -->
         <div class="mt-24 text-center max-w-2xl mx-auto">
             <p class="text-xl md:text-2xl text-text-muted font-light leading-relaxed">
-                "These are not just tools. They’re the <span class="text-white font-bold">systems</span> I use to build
+                "These are not just tools. They’re the <span class="text-text-main font-bold">systems</span> I use to build
                 digital worlds."
             </p>
         </div>

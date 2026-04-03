@@ -6,12 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand-primary': '#00f0ff',
-        'brand-secondary': '#7000ff',
-        'bg-dark': '#050505',
-        'bg-darker': '#020202',
-        'text-main': '#f0f0f0',
-        'text-muted': '#888888',
+        'brand-primary': 'var(--brand-primary)',
+        'brand-secondary': 'var(--brand-secondary)',
+        'bg-dark': 'var(--bg-base)',
+        'bg-darker': 'var(--bg-base)', // Fallback to base or define a darker var if needed
+        'text-main': 'var(--text-primary)',
+        'text-muted': 'var(--text-muted)',
       },
       fontFamily: {
         sans: ['Inter', 'Outfit', 'sans-serif'],

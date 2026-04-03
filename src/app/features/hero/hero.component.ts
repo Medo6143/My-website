@@ -10,9 +10,6 @@ import { GsapService } from '../../core/services/gsap.service';
     styleUrl: './hero.css'
 })
 export class HeroComponent implements AfterViewInit {
-    @ViewChild('heroBg') heroBg!: ElementRef;
-    @ViewChild('portalCore') portalCore!: ElementRef;
-    @ViewChild('particlesContainer') particlesContainer!: ElementRef;
     @ViewChild('titlePhase1') titlePhase1!: ElementRef;
     @ViewChild('titlePhase2') titlePhase2!: ElementRef;
     @ViewChild('heroSubtitle') heroSubtitle!: ElementRef;
@@ -20,7 +17,6 @@ export class HeroComponent implements AfterViewInit {
     @ViewChild('scrollIndicator') scrollIndicator!: ElementRef;
     @ViewChild('frameworkText') frameworkText!: ElementRef;
 
-    particles: any[] = [];
     private isBrowser: boolean;
 
     // Mouse coordinates for parallax tracking
@@ -32,9 +28,6 @@ export class HeroComponent implements AfterViewInit {
         @Inject(PLATFORM_ID) private platformId: Object
     ) {
         this.isBrowser = isPlatformBrowser(this.platformId);
-        if (this.isBrowser) {
-            this.generateParticles(50);
-        }
     }
 
     ngAfterViewInit() {
@@ -47,16 +40,7 @@ export class HeroComponent implements AfterViewInit {
         }
     }
 
-    generateParticles(count: number) {
-        for (let i = 0; i < count; i++) {
-            this.particles.push({
-                left: Math.random() * 100 + '%',
-                top: Math.random() * 100 + '%',
-                size: (Math.random() * 3 + 1) + 'px',
-                blur: (Math.random() * 2) + 'px'
-            });
-        }
-    }
+
 
     @HostListener('mousemove', ['$event'])
     onMouseMove(event: MouseEvent) {
@@ -74,28 +58,6 @@ export class HeroComponent implements AfterViewInit {
 
     private updateParallax() {
         const gsap = this.gsapService.gsap;
-
-        // Portal tilts and slightly moves with mouse
-        if (this.portalCore) {
-            gsap.to(this.portalCore.nativeElement, {
-                rotateX: -this.mouseY * 15,
-                rotateY: this.mouseX * 15,
-                x: -this.mouseX * 30, // move opposite to mouse
-                y: -this.mouseY * 30,
-                duration: 1,
-                ease: "power2.out"
-            });
-        }
-
-        // Particles parallax (move with mouse, creating depth)
-        if (this.particlesContainer) {
-            gsap.to(this.particlesContainer.nativeElement, {
-                x: this.mouseX * 40,
-                y: this.mouseY * 40,
-                duration: 1.5,
-                ease: "power2.out"
-            });
-        }
 
         // Text parallax (moves slightly opposite to maintain focus depth)
         if (this.titlePhase2) {
@@ -127,41 +89,7 @@ export class HeroComponent implements AfterViewInit {
                 ease: "power2.in"
             });
 
-        // 2. The Big Bang / Portal Ignition
-        tl.to(this.portalCore.nativeElement, {
-            opacity: 1,
-            scale: 1,
-            rotation: 180,
-            duration: 3,
-            ease: "expo.out"
-        }, "-=0.5");
-
-        // Flash screen white slightly
-        if (this.heroBg) {
-            tl.fromTo(this.heroBg.nativeElement,
-                { filter: "brightness(5) contrast(2)" },
-                { filter: "brightness(1) contrast(1)", duration: 2, ease: "power4.out" },
-                "-=2.5"
-            );
-        }
-
-        // 3. Particles explosion outward
-        if (this.particlesContainer && this.particlesContainer.nativeElement.children.length > 0) {
-            tl.to(this.particlesContainer.nativeElement.children, {
-                opacity: function (index) { return Math.random() * 0.5 + 0.2; }, // Random opacities
-                scale: function () { return Math.random() * 2 + 0.5; }, // Random scales
-                x: function () { return (Math.random() - 0.5) * window.innerWidth * 0.5; },
-                y: function () { return (Math.random() - 0.5) * window.innerHeight * 0.5; },
-                duration: 4,
-                ease: "expo.out",
-                stagger: {
-                    amount: 0.5,
-                    from: "center"
-                }
-            }, "-=2.8");
-        }
-
-        // 4. Phase 2 Sequence Reveal
+        // 2. Phase 2 Sequence Reveal
         if (this.titlePhase2) {
             tl.to(this.titlePhase2.nativeElement.querySelectorAll('.title-line'), {
                 y: '0%',

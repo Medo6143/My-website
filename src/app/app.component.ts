@@ -12,7 +12,9 @@ import { ContactComponent } from './features/contact/contact.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { MagneticCursorComponent } from './shared/components/cursor/cursor.component';
 import { FeaturedShowcaseComponent } from './features/featured-showcase/featured-showcase.component';
+import { MoonSceneComponent } from './shared/components/moon-scene/moon-scene.component';
 import { GsapService } from './core/services/gsap.service';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +32,8 @@ import { GsapService } from './core/services/gsap.service';
     ContactComponent,
     FeaturedShowcaseComponent,
     LoaderComponent,
-    MagneticCursorComponent
+    MagneticCursorComponent,
+    MoonSceneComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -43,6 +46,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private gsapService: GsapService,
+    public themeService: ThemeService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -50,26 +54,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     if (this.isBrowser) {
-      // Only start global animations AFTER loader is gone if possible, 
-      // but stars can drift immediately.
-      this.initGlobalAnimations();
     }
   }
 
   onLoadingFinished() {
     this.isLoaded = true;
-  }
-
-  private initGlobalAnimations() {
-    const gsap = this.gsapService.gsap;
-
-    // Slow infinite stars drift
-    gsap.to(".stars", {
-      y: -200,
-      duration: 60,
-      repeat: -1,
-      ease: "none"
-    });
   }
 
   ngOnDestroy() {

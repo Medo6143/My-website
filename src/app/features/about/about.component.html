@@ -1,4 +1,4 @@
-<section #aboutSection class="relative py-32 lg:py-48 min-h-screen bg-transparent text-white overflow-hidden z-20"
+<section #aboutSection class="relative py-32 lg:py-48 min-h-screen bg-transparent text-text-main overflow-hidden z-20"
     (mousemove)="onMouseMove($event)">
 
     <!-- Interactive Background Spotlight Environment -->
@@ -19,7 +19,7 @@
         <!-- The Hook Title -->
         <div class="text-center mb-24">
             <h2 #hookTitle
-                class="text-3xl md:text-5xl lg:text-6xl font-light tracking-widest text-white opacity-0 filter blur-[10px] heading-glow visible">
+                class="text-3xl md:text-5xl lg:text-6xl font-light tracking-widest text-text-main opacity-0 filter blur-[10px] heading-glow visible">
                 Who is behind the code?
             </h2>
             <div #titleGlowLine class="h-[2px] w-0 bg-brand-primary mx-auto mt-6 shadow-[0_0_15px_#00f0ff] opacity-0">
@@ -36,13 +36,13 @@
                         class="story-line text-2xl lg:text-3xl font-black italic text-brand-primary opacity-0 -translate-x-10">
                         I don't just write code.
                     </p>
-                    <p class="story-line text-3xl lg:text-4xl font-black text-white opacity-0 -translate-x-10 mt-2">
+                    <p class="story-line text-3xl lg:text-4xl font-black text-text-main opacity-0 -translate-x-10 mt-2">
                         I design experiences.
                     </p>
                 </div>
 
                 <div class="mb-8 text-text-muted text-lg lg:text-xl font-light leading-relaxed space-y-4">
-                    <p class="story-line opacity-0 -translate-x-10 text-white font-bold">
+                    <p class="story-line opacity-0 -translate-x-10 text-text-main font-bold">
                         Frontend Developer with a focus on building responsive, user-friendly web interfaces.
                     </p>
                     <p class="story-line opacity-0 -translate-x-10">
@@ -52,7 +52,7 @@
                     </p>
                     <p class="story-line opacity-0 -translate-x-10">
                         Adept at translating designs into functional code, making complex UI challenges <span
-                            class="text-white">easy</span> to solve through intuitive logic.
+                            class="text-text-main">easy</span> to solve through intuitive logic.
                     </p>
                     <p class="story-line opacity-0 -translate-x-10">
                         Continuously learning new tools to stay current and bring impactful digital products to life.
@@ -62,8 +62,8 @@
                     </p>
                 </div>
 
-                <div class="mb-6 pt-6 border-t border-white/10">
-                    <p class="story-line text-white text-xl font-bold opacity-0 -translate-x-10 italic">
+                <div class="mb-6 pt-6 border-t border-text-muted/20">
+                    <p class="story-line text-text-main text-xl font-bold opacity-0 -translate-x-10 italic">
                         "I don't just build interfaces... I build digital worlds that are <span
                             class="text-brand-primary">easy</span> to explore."
                     </p>
@@ -72,7 +72,7 @@
                 <!-- Summary Pillars -->
                 <div #pillarsGrid class="grid grid-cols-1 sm:grid-cols-3 gap-4 ">
                     <div *ngFor="let pillar of pillars"
-                        class="pillar-card p-4 rounded-xl bg-white/5 border border-white/10 hover:border-brand-primary/40 transition-all duration-500 group">
+                        class="pillar-card p-4 glass-panel hover:border-brand-primary/40 transition-all duration-500 group">
                         <h4 class="text-base font-bold mb-1 group-hover:text-brand-primary transition-colors">{{
                             pillar.title }}</h4>
                         <p class="text-text-muted text-[10px] leading-relaxed">{{ pillar.desc }}</p>
@@ -82,7 +82,7 @@
                 <div class="story-line opacity-0 mt-0">
                     <a href="/cv.pdf" download="Mohamed_Wael_Frontend_Developer_CV.pdf"
                         class="inline-flex items-center gap-4 px-8 py-4 bg-transparent border border-brand-primary/40 rounded-full hover:bg-brand-primary/10 hover:border-brand-primary hover:shadow-[0_0_20px_rgba(0,240,255,0.2)] transition-all duration-300 group/cv">
-                        <span class="text-white font-bold uppercase tracking-widest text-xs">
+                        <span class="text-text-main font-bold uppercase tracking-widest text-xs">
                             Download CV</span>
                         <svg class="w-5 h-5 text-brand-primary group-hover:translate-y-1 transition-transform duration-300"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@
 
                 <!-- Core Logo/Branding (Center Only MW) -->
                 <div
-                    class="absolute w-24 h-24 lg:w-32 lg:h-32 rounded-full glass-panel flex items-center justify-center z-20 shadow-[0_0_50px_rgba(0,240,255,0.4)] border-brand-primary/50 bg-black/80 backdrop-blur-2xl group overflow-hidden">
+                    class="absolute w-24 h-24 lg:w-32 lg:h-32 glass-panel flex items-center justify-center z-20 shadow-[0_0_50px_rgba(0,240,255,0.4)] hover:shadow-brand-primary/60 group overflow-hidden">
                     <span
                         class="text-3xl lg:text-5xl font-black text-brand-primary drop-shadow-[0_0_15px_rgba(0,240,255,0.8)] z-10 transition-transform duration-500 group-hover:scale-110">MW</span>
                     <!-- Subtle pulsing core -->
@@ -110,75 +110,75 @@
 
                 <!-- Orbit Ring 1 (Inner - Primary Engines) -->
                 <div
-                    class="absolute w-[220px] h-[220px] lg:w-[300px] lg:h-[300px] rounded-full border border-white/10 border-dashed animate-[spin_25s_linear_infinite] z-10 [transform-style:preserve-3d]">
+                    class="absolute w-[220px] h-[220px] lg:w-[300px] lg:h-[300px] rounded-full border border-text-muted/20 border-dashed animate-[spin_25s_linear_infinite] z-10 [transform-style:preserve-3d]">
                     <!-- React (Top) -->
                     <div
-                        class="orbit-node absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#61DAFB]/30 shadow-[0_0_15px_rgba(97,218,251,0.2)]">
+                        class="orbit-node absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-[#61DAFB]/30 shadow-[0_0_15px_rgba(97,218,251,0.2)]">
                         <span class="text-[#61DAFB] font-bold text-[10px]">React</span>
                     </div>
                     <!-- Angular (Bottom) -->
                     <div
-                        class="orbit-node absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#DD0031]/30 shadow-[0_0_15px_rgba(221,0,49,0.2)]">
+                        class="orbit-node absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-[#DD0031]/30 shadow-[0_0_15px_rgba(221,0,49,0.2)]">
                         <span class="text-[#DD0031] font-bold text-[10px]">Angular</span>
                     </div>
                 </div>
 
                 <!-- Orbit Ring 2 (Middle - Languages & Core Logic) -->
                 <div
-                    class="absolute w-[320px] h-[320px] lg:w-[450px] lg:h-[450px] rounded-full border border-white/5 animate-[spin_40s_linear_infinite_reverse] z-5 [transform-style:preserve-3d]">
+                    class="absolute w-[320px] h-[320px] lg:w-[450px] lg:h-[450px] rounded-full border border-text-muted/20 animate-[spin_40s_linear_infinite_reverse] z-5 [transform-style:preserve-3d]">
                     <!-- TypeScript (Top) -->
                     <div
-                        class="orbit-node absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#3178C6]/30 shadow-[0_0_15px_rgba(49,120,198,0.1)]">
+                        class="orbit-node absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-[#3178C6]/30 shadow-[0_0_15px_rgba(49,120,198,0.1)]">
                         <span class="text-[#3178C6] font-bold text-xs">TS</span>
                     </div>
                     <!-- Node.js (Bottom) -->
                     <div
-                        class="orbit-node absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#339933]/30 shadow-[0_0_15px_rgba(51,153,51,0.1)]">
+                        class="orbit-node absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-[#339933]/30 shadow-[0_0_15px_rgba(51,153,51,0.1)]">
                         <span class="text-[#339933] font-bold text-[10px]">Node.js</span>
                     </div>
                     <!-- JavaScript (Right) -->
                     <div
-                        class="orbit-node absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#F7DF1E]/30 shadow-[0_0_15px_rgba(247,223,30,0.1)]">
+                        class="orbit-node absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-[#F7DF1E]/30 shadow-[0_0_15px_rgba(247,223,30,0.1)]">
                         <span class="text-[#F7DF1E] font-bold text-xs">JS</span>
                     </div>
                     <!-- Tailwind (Left) -->
                     <div
-                        class="orbit-node absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#06B6D4]/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                        class="orbit-node absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full glass-panel flex items-center justify-center border border-[#06B6D4]/30 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                         <span class="text-[#06B6D4] font-bold text-[8px]">Tailwind</span>
                     </div>
                 </div>
 
                 <!-- Orbit Ring 3 (Outer Rim - Ecosystem & Tools) -->
                 <div
-                    class="absolute w-[420px] h-[420px] lg:w-[600px] lg:h-[600px] rounded-full border border-white/5 animate-[spin_60s_linear_infinite] z-0 [transform-style:preserve-3d]">
+                    class="absolute w-[420px] h-[420px] lg:w-[600px] lg:h-[600px] rounded-full border border-text-muted/20 animate-[spin_60s_linear_infinite] z-0 [transform-style:preserve-3d]">
                     <!-- MongoDB -->
                     <div
-                        class="orbit-node absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#47A248]/20 shadow-[0_0_10px_rgba(71,162,72,0.1)]">
+                        class="orbit-node absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-[#47A248]/20 shadow-[0_0_10px_rgba(71,162,72,0.1)]">
                         <span class="text-[#47A248] font-bold text-[8px]">MongoDB</span>
                     </div>
                     <!-- Express -->
                     <div
-                        class="orbit-node absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-white/20 shadow-[0_0_10px_rgba(255,255,255,0.1)]">
-                        <span class="text-white font-bold text-[8px]">Express</span>
+                        class="orbit-node absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-text-muted/20 shadow-[0_0_10px_var(--text-primary)]">
+                        <span class="text-text-main font-bold text-[8px]">Express</span>
                     </div>
                     <!-- Postman -->
                     <div
-                        class="orbit-node absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#FF6C37]/20 shadow-[0_0_10px_rgba(255,108,55,0.1)]">
+                        class="orbit-node absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-[#FF6C37]/20 shadow-[0_0_10px_rgba(255,108,55,0.1)]">
                         <span class="text-[#FF6C37] font-bold text-[8px]">Postman</span>
                     </div>
                     <!-- GSAP -->
                     <div
-                        class="orbit-node absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#88CE02]/20 shadow-[0_0_10px_rgba(136,206,2,0.1)]">
+                        class="orbit-node absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-[#88CE02]/20 shadow-[0_0_10px_rgba(136,206,2,0.1)]">
                         <span class="text-[#88CE02] font-bold text-[8px]">GSAP</span>
                     </div>
                     <!-- Figma -->
                     <div
-                        class="orbit-node absolute top-[15%] right-[15%] w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#F24E1E]/20">
+                        class="orbit-node absolute top-[15%] right-[15%] w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-[#F24E1E]/20">
                         <span class="text-[#F24E1E] font-bold text-[8px]">Figma</span>
                     </div>
                     <!-- RxJS -->
                     <div
-                        class="orbit-node absolute bottom-[15%] left-[15%] w-12 h-12 rounded-full glass-panel flex items-center justify-center bg-black/90 border border-[#B7178C]/20">
+                        class="orbit-node absolute bottom-[15%] left-[15%] w-12 h-12 rounded-full glass-panel flex items-center justify-center border border-[#B7178C]/20">
                         <span class="text-[#B7178C] font-bold text-[8px]">RxJS</span>
                     </div>
                 </div>

@@ -113,6 +113,15 @@ export class ProjectsComponent implements AfterViewInit {
             icon: 'home'
         },
         {
+            title: 'Owwab — أواب',
+            description: 'A production-grade Islamic companion app built for Android with React Native & Native Kotlin/Java. Features reliable Azan alerts, floating Tasbeeh overlays, and accurate prayer times.',
+            demoUrl: '#',
+            codeUrl: '#',
+            techStack: ['React Native', 'Kotlin', 'Redux', 'Expo'],
+            imageUrl: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800',
+            icon: 'mosque'
+        },
+        {
             title: 'Movies App',
             description: 'Cinematic application for discovering movies with dynamic search and content filtering.',
             demoUrl: 'https://movies-app-lilac-eta.vercel.app/',

@@ -1,4 +1,4 @@
-<section #servicesSection class="relative py-32 lg:py-48 bg-transparent text-white overflow-hidden z-20">
+<section #servicesSection class="relative py-32 lg:py-48 bg-transparent text-text-main overflow-hidden z-20">
 
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
@@ -9,7 +9,7 @@
                 Services I Offer
             </h2>
             <p #sectionSubtitle class="text-lg md:text-xl text-text-muted font-light tracking-[0.2em] uppercase">
-                Let’s Build Something <span class="text-white italic">Exceptional Together</span>
+                Let’s Build Something <span class="text-text-main italic">Exceptional Together</span>
             </p>
         </div>
 
@@ -17,18 +17,18 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative">
 
             <div *ngFor="let service of services; let i = index" #serviceCard
-                class="glass-panel p-10 md:p-12 rounded-[2.5rem] border border-white/5 hover:border-brand-primary/40 group/card transition-all duration-700 relative overflow-hidden flex flex-col justify-between">
+                class="glass-panel p-10 md:p-12 rounded-[2.5rem] border-text-muted/20 hover:border-brand-primary/40 group/card transition-all duration-700 relative overflow-hidden flex flex-col justify-between">
 
                 <!-- Background Light Sweep Decor -->
                 <div
-                    class="absolute -inset-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 -translate-x-full group-hover/card:translate-x-full duration-1000 ease-in-out transition-transform pointer-events-none">
+                    class="absolute -inset-full bg-gradient-to-r from-transparent via-text-muted/10 to-transparent skew-x-12 -translate-x-full group-hover/card:translate-x-full duration-1000 ease-in-out transition-transform pointer-events-none">
                 </div>
 
                 <div>
                     <!-- Icon Activation Header -->
                     <div class="flex items-center justify-between mb-10">
                         <div
-                            class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover/card:border-brand-primary/50 group-hover/card:bg-brand-primary/5 transition-all duration-500 relative">
+                            class="w-16 h-16 rounded-2xl bg-text-muted/10 flex items-center justify-center border border-text-muted/20 group-hover/card:border-brand-primary/50 group-hover/card:bg-brand-primary/5 transition-all duration-500 relative">
                             <!-- Glowing ring on hover -->
                             <div
                                 class="absolute inset-0 rounded-2xl border border-brand-primary opacity-0 group-hover/card:opacity-100 group-hover/card:animate-ping duration-700">
@@ -63,7 +63,7 @@
                             </ng-container>
                         </div>
                         <span
-                            class="text-[10px] font-mono tracking-widest text-white/20 group-hover/card:text-brand-primary/40 uppercase transition-colors">Service_System_0{{
+                            class="text-[10px] font-mono tracking-widest text-text-muted/50 group-hover/card:text-brand-primary/40 uppercase transition-colors">Service_System_0{{
                             i + 1 }}</span>
                     </div>
 
@@ -83,7 +83,7 @@
                                 class="w-1.5 h-1.5 rounded-full bg-brand-primary shadow-[0_0_8px_#00f0ff] animate-pulse">
                             </div>
                             <span
-                                class="text-text-muted text-base tracking-wide group-hover/feat:text-white transition-colors">{{
+                                class="text-text-muted text-base tracking-wide group-hover/feat:text-text-main transition-colors">{{
                                 feat }}</span>
                         </li>
                     </ul>
@@ -102,7 +102,7 @@
                     </a>
 
                     <a [href]="service.emailLink" target="_blank"
-                        class="flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white hover:text-bg-dark transition-all duration-300 group/mail">
+                        class="flex items-center justify-center gap-3 py-4 px-6 rounded-2xl glass-panel hover:bg-text-main hover:text-bg-dark transition-all duration-300 group/mail">
                         <svg class="w-5 h-5 group-hover/mail:-rotate-12 transition-transform" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -143,7 +143,7 @@
 
                 <a href="https://wa.me/201067333964?text=Hello%20I%20want%20to%20start%20a%20new%20project"
                     target="_blank"
-                    class="inline-flex items-center gap-4 bg-brand-primary text-bg-dark px-10 py-5 rounded-full text-xl font-bold hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_10px_40px_rgba(0,240,255,0.4)] hover:shadow-[0_15px_60px_rgba(255,255,255,0.4)] group/final">
+                    class="inline-flex items-center gap-4 bg-brand-primary text-bg-dark px-10 py-5 rounded-full text-xl font-bold hover:bg-text-main hover:scale-105 transition-all duration-300 shadow-[0_10px_40px_var(--text-primary)] hover:shadow-[0_15px_60px_var(--text-primary)] group/final">
                     <span>Start Your Project</span>
                     <svg class="w-6 h-6 group-hover/final:translate-x-2 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">

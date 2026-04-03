@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ElementRef, ViewChild, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { GsapService } from '../../../core/services/gsap.service';
+import { ThemeService } from '../../../core/services/theme.service';
 
 @Component({
     selector: 'app-navbar',
@@ -12,16 +13,24 @@ import { GsapService } from '../../../core/services/gsap.service';
 export class NavbarComponent implements AfterViewInit {
     @ViewChild('navbar', { static: true }) navbarRef!: ElementRef;
 
+    isMenuOpen = false;
+
     navLinks = [
         { name: 'Home', target: '#hero' },
         { name: 'About', target: '#about' },
+        { name: 'Showcase', target: '#featured' },
         { name: 'Projects', target: '#projects' },
         { name: 'Experience', target: '#experience' },
         { name: 'Skills', target: '#skills' },
+        { name: 'Services', target: '#services' },
         { name: 'Contact', target: '#contact' },
     ];
 
-    constructor(private gsapService: GsapService, @Inject(PLATFORM_ID) private platformId: Object) { }
+    constructor(
+        private gsapService: GsapService, 
+        public themeService: ThemeService,
+        @Inject(PLATFORM_ID) private platformId: Object
+    ) { }
 
     ngAfterViewInit() {
         if (isPlatformBrowser(this.platformId)) {
@@ -29,14 +38,43 @@ export class NavbarComponent implements AfterViewInit {
         }
     }
 
-    scrollTo(target: string, event: Event) {
-        event.preventDefault();
-        if (!isPlatformBrowser(this.platformId)) return;
+    toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+        if (this.isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
 
-        // Smooth scroll using GSAP or native
+    scrollTo(target: string, event: Event) {
+        console.log('scrollTo called with target:', target);
+        event.preventDefault();
+        if (!isPlatformBrowser(this.platformId)) {
+            console.log('Not in browser platform');
+            return;
+        }
+
+        // Close menu if open
+        if (this.isMenuOpen) {
+            this.toggleMenu();
+        }
+
+        const gsap = this.gsapService.gsap;
         const element = document.querySelector(target);
+        console.log('Target element found:', element);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            console.log('Scrolling to:', target);
+            gsap.to(window, {
+                duration: 1.5,
+                scrollTo: {
+                    y: target,
+                    offsetY: 80
+                },
+                ease: 'power4.inOut'
+            });
+        } else {
+            console.error('Element not found for target:', target);
         }
     }
 

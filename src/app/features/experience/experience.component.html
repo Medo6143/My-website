@@ -1,4 +1,4 @@
-<section #experienceSection class="relative py-32 lg:py-48 bg-transparent text-white overflow-hidden z-20">
+<section #experienceSection class="relative py-32 lg:py-48 bg-transparent text-text-main overflow-hidden z-20">
 
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
 
@@ -11,7 +11,7 @@
             <div #titleGlow class="h-px w-24 bg-brand-primary mx-auto mb-8 shadow-[0_0_15px_#00f0ff] opacity-0"></div>
             <p #sectionSubtitle
                 class="text-xl md:text-2xl text-text-muted font-light tracking-widest uppercase opacity-0 translate-y-10">
-                Not Where I Worked — <span class="text-white italic">But What I Became There</span>
+                Not Where I Worked — <span class="text-text-main italic">But What I Became There</span>
             </p>
         </div>
 
@@ -19,7 +19,7 @@
         <div class="relative max-w-5xl mx-auto">
 
             <!-- Background Track (Dim) -->
-            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/5 transform md:-translate-x-1/2"></div>
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-text-muted/20 transform md:-translate-x-1/2"></div>
 
             <!-- Glowing Progress Line (Animated via GSAP) -->
             <div #progressLine
@@ -55,7 +55,7 @@
                         [ngClass]="{'md:translate-x-10': i % 2 !== 0}">
 
                         <div (click)="toggleExp(i)"
-                            class="glass-panel p-8 md:p-12 rounded-3xl border-l-2 border-l-brand-primary hover:border-l-brand-secondary cursor-pointer hover:bg-white/[0.03] transition-all duration-500 relative group/card overflow-hidden">
+                            class="glass-panel p-8 md:p-12 rounded-3xl border-l-2 border-l-brand-primary hover:border-l-brand-secondary cursor-pointer hover:bg-text-muted/5 transition-all duration-500 relative group/card overflow-hidden">
 
                             <!-- Card Hover Overlay -->
                             <div
@@ -70,8 +70,8 @@
                                 {{ exp.role }}
                             </h3>
 
-                            <div class="text-xl text-white/80 font-medium mb-6">
-                                {{ exp.company }} — <span class="text-text-muted italic font-light italic">Career
+                            <div class="text-xl text-text-main/80 font-medium mb-6">
+                                {{ exp.company }} — <span class="text-text-muted italic font-light">Career
                                     Evolution</span>
                             </div>
 
@@ -80,14 +80,14 @@
                             </p>
 
                             <!-- Animated Bullets -->
-                            <ul class="space-y-4 border-t border-white/10 pt-8"
+                            <ul class="space-y-4 border-t border-text-muted/20 pt-8"
                                 [ngClass]="{'max-h-0 opacity-0 overflow-hidden': !expandedStates[i], 'max-h-[500px] opacity-100': expandedStates[i]}">
                                 <li *ngFor="let point of exp.points" class="flex items-start gap-3 group/point">
                                     <div
                                         class="mt-2 w-1.5 h-1.5 rounded-full bg-brand-primary group-hover/point:shadow-[0_0_8px_#00f0ff] transition-shadow">
                                     </div>
                                     <span
-                                        class="text-text-muted text-base leading-snug group-hover/point:text-white transition-colors">
+                                        class="text-text-muted text-base leading-snug group-hover/point:text-text-main transition-colors">
                                         {{ point }}
                                     </span>
                                 </li>
@@ -96,7 +96,7 @@
                             <!-- Tech Stack Glow Tags -->
                             <div class="flex flex-wrap gap-2 mt-8">
                                 <span *ngFor="let tech of exp.tech"
-                                    class="px-3 py-1 text-[10px] rounded-full border border-white/5 bg-white/5 text-text-muted transition-all hover:border-brand-primary/50 hover:text-brand-primary hover:box-glow">
+                                    class="px-3 py-1 text-[10px] rounded-full border border-text-muted/10 bg-text-muted/10 text-text-muted transition-all hover:border-brand-primary/50 hover:text-brand-primary hover:box-glow">
                                     {{ tech }}
                                 </span>
                             </div>
@@ -126,7 +126,7 @@
         <!-- Closing Statement -->
         <div #journeyEnd class="mt-48 text-center opacity-0 translate-y-20">
             <h4 class="text-2xl md:text-3xl font-light italic text-text-muted">
-                Every step built the <span class="text-white font-bold">next version of me.</span>
+                Every step built the <span class="text-text-main font-bold">next version of me.</span>
             </h4>
         </div>
 
