@@ -91,6 +91,15 @@ export class ProjectsComponent implements AfterViewInit {
             techStack: ['React.js', 'Node.js', 'Firebase', 'Redux', 'Bootstrap'],
             imageUrl: 'https://images.unsplash.com/photo-1523474253046-7cd2ad070262?auto=format&fit=crop&q=80&w=800',
             icon: 'amazon'
+        },
+        {
+            title: 'Karame El Sham',
+            description: 'Professional restaurant landing page for a local Syrian cuisine business. Features a modern responsive UI, interactive menu sections, smooth animations, and an optimized layout designed to drive customer engagement and reservations.',
+            demoUrl: 'https://karame-elsham.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/Karame_ELSHAM',
+            techStack: ['React', 'Tailwind CSS', 'JavaScript'],
+            imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800',
+            icon: 'building'
         }
     ];
 
