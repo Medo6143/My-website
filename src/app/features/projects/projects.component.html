@@ -86,6 +86,13 @@
                                     d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
                                 </path>
                             </svg>
+                            <!-- Amazon / Package Icon -->
+                            <svg *ngIf="project.icon === 'amazon'"
+                                class="w-32 h-32 md:w-48 md:h-48 drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
                             <!-- Mosque Icon -->
                             <svg *ngIf="project.icon === 'mosque'"
                                 class="w-32 h-32 md:w-48 md:h-48 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]" fill="none"

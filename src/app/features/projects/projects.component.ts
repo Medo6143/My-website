@@ -57,6 +57,15 @@ export class ProjectsComponent implements AfterViewInit {
             icon: 'file-text'
         },
         {
+            title: 'Owwab — أواب',
+            description: 'Production-grade offline-capable Islamic Android app with custom native Kotlin/Java modules. Exact Azan scheduling via AlarmManager, ForegroundService for background audio, Floating Tasbeeh Bubble, Quran reader, GPS prayer times, Qibla compass, Ibadah tracker, and Zakat calculator.',
+            demoUrl: '#',
+            codeUrl: 'https://github.com/Medo6143/owwab',
+            techStack: ['React Native', 'Expo SDK 54', 'Kotlin/Java', 'Redux Toolkit', 'TypeScript'],
+            imageUrl: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800',
+            icon: 'mosque'
+        },
+        {
             title: 'Èlevè Store',
             description: 'Premium Next.js e-commerce storefront with Firebase backend, Redux Toolkit state management, Paymob payment gateway integration, real-time transactions, order history, and a full admin dashboard with CMS and advanced filtering.',
             demoUrl: 'https://store-eleve.vercel.app/',
@@ -73,16 +82,19 @@ export class ProjectsComponent implements AfterViewInit {
             techStack: ['React', 'Firebase', 'Tailwind CSS'],
             imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
             icon: 'map-pin'
+        },
+        {
+            title: 'Amazon Clone',
+            description: 'Full-stack e-commerce application with Firebase Auth, product management, shopping cart, and order tracking. Led the team as Team Lead managing Agile workflow via Trello and enforcing Git/GitHub best practices across the project.',
+            demoUrl: 'https://amazon-clone-seven-opal.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/Amazon_Clone',
+            techStack: ['React.js', 'Node.js', 'Firebase', 'Redux', 'Bootstrap'],
+            imageUrl: 'https://images.unsplash.com/photo-1523474253046-7cd2ad070262?auto=format&fit=crop&q=80&w=800',
+            icon: 'amazon'
         }
     ];
 
     otherProjects: MiniProject[] = [
-        {
-            title: 'Amazon Clone',
-            demoUrl: 'https://amazon-clone-seven-opal.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/Amazon_Clone',
-            tech: ['React', 'Firebase', 'Redux']
-        },
         {
             title: 'ChatME',
             demoUrl: 'https://chat-me-six-zeta.vercel.app/',
