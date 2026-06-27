@@ -32,103 +32,49 @@ export class ProjectsComponent implements AfterViewInit {
 
     projects: Project[] = [
         {
-            title: 'Chat Application',
-            description: 'Real-time messaging platform built with React and Firebase, featuring user authentication and responsive design.',
-            demoUrl: 'https://chat-me-six-zeta.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/ChatME',
-            techStack: ['React', 'Firebase', 'CSS'],
-            imageUrl: 'https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&q=80&w=800',
-            icon: 'messages'
-        },
-        {
-            title: 'E-commerce Store',
-            description: 'Online store featuring product management, shopping cart, and order management with a Firebase backend.',
-            demoUrl: 'https://ecommerce-store55.vercel.app/',
-            codeUrl: 'https://github.com/medo6143/ecommerce-store',
-            techStack: ['React', 'Firebase', 'TailwindCSS'],
-            imageUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800',
-            icon: 'shopping-cart'
-        },
-        {
-            title: 'Image Search App',
-            description: 'Dynamic image search application that fetches and displays high-quality images using an API.',
-            demoUrl: 'https://medo6143.github.io/image-search/',
-            codeUrl: 'https://github.com/medo6143/image-search',
-            techStack: ['JavaScript', 'HTML', 'CSS'],
-            imageUrl: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800',
-            icon: 'search'
-        },
-        {
-            title: 'GameXO',
-            description: 'Interactive Tic-Tac-Toe game built with a focus on smooth logic and responsive layout.',
-            demoUrl: 'https://medo6143.github.io/game_xo/',
-            codeUrl: 'https://github.com/medo6143/game_xo',
-            techStack: ['JavaScript', 'HTML', 'CSS'],
-            imageUrl: 'https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&q=80&w=800',
-            icon: 'gamepad'
-        },
-        {
-            title: 'Portfolio Website',
-            description: 'Personal portfolio showcasing my skills, projects, and professional journey as a developer.',
-            demoUrl: 'https://portfolio-mohameds-projects-ea923384.vercel.app/',
-            codeUrl: 'https://github.com/medo6143/portfolio',
-            techStack: ['React', 'TailwindCSS'],
-            imageUrl: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800',
-            icon: 'user'
-        },
-        {
-            title: 'Best Food',
-            description: 'Modern landing page for a food delivery concept with interactive UI elements.',
-            demoUrl: 'https://best-food-react-4060sdcuh-mohameds-projects-ea923384.vercel.app/',
-            codeUrl: 'https://github.com/medo6143/best-food',
-            techStack: ['React', 'CSS', 'JavaScript'],
-            imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800',
-            icon: 'utensils'
-        },
-        {
-            title: 'Amazon Clone',
-            description: 'Full-featured Amazon clone developed within a team environment, featuring product listings and checkout flow.',
-            demoUrl: 'https://amazon-clone-seven-opal.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/Amazon_Clone',
-            techStack: ['React', 'CSS', 'JavaScript'],
-            imageUrl: 'https://images.unsplash.com/photo-1523474253046-7cd2ad070262?auto=format&fit=crop&q=80&w=800',
-            icon: 'amazon'
-        },
-        {
-            title: 'Karame ELSHAM',
-            description: 'Professional landing page designed for a local business with responsive UI and optimized layout.',
-            demoUrl: 'https://karame-elsham.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/Karame_ELSHAM',
-            techStack: ['React', 'TailwindCSS', 'JavaScript'],
-            imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800',
-            icon: 'building'
-        },
-        {
-            title: 'Interior Design',
-            description: 'Modern interior design showcase page featuring smooth animations and responsive layouts.',
-            demoUrl: 'https://inrerior-design.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/Inrerior_Design-',
-            techStack: ['React', 'TailwindCSS', 'JavaScript'],
-            imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800',
-            icon: 'home'
-        },
-        {
             title: 'Owwab — أواب',
-            description: 'A production-grade Islamic companion app built for Android with React Native & Native Kotlin/Java. Features reliable Azan alerts, floating Tasbeeh overlays, and accurate prayer times.',
+            description: 'Production-grade offline-capable Islamic Android app with custom native Kotlin/Java modules — exact Azan scheduling, ForegroundService for background audio, Floating Tasbeeh Bubble, Quran reader, GPS-based prayer times, Qibla compass, Ibadah tracker, Zakat calculator, and home screen widget.',
             demoUrl: '#',
-            codeUrl: '#',
-            techStack: ['React Native', 'Kotlin', 'Redux', 'Expo'],
+            codeUrl: 'https://github.com/Medo6143/owwab',
+            techStack: ['React Native', 'Expo SDK 54', 'TypeScript', 'Redux Toolkit', 'Kotlin/Java', 'NativeWind'],
             imageUrl: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800',
             icon: 'mosque'
         },
         {
-            title: 'Movies App',
-            description: 'Cinematic application for discovering movies with dynamic search and content filtering.',
-            demoUrl: 'https://movies-app-lilac-eta.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/Movies_app__',
-            techStack: ['React', 'TailwindCSS', 'JavaScript'],
-            imageUrl: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&get=q=80&w=800',
-            icon: 'film'
+            title: 'Smart Clinic',
+            description: 'Medical SaaS platform with 70+ features across 3 portals (Dashboard, Web, PWA). Includes offline mode, push notifications, OpenRouter LLM API for AI-driven follow-ups, Paymob payments, ICD-10 E-Prescription, and bilingual RTL/LTR UI.',
+            demoUrl: 'https://smartclinic-pwa.vercel.app/',
+            codeUrl: '#',
+            techStack: ['Next.js 14', 'Node.js', 'Express.js', 'Firebase', 'TypeScript', 'Paymob API', 'PWA', 'OpenRouter LLM'],
+            imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
+            icon: 'activity'
+        },
+        {
+            title: 'ResumeAI',
+            description: 'AI-powered SaaS platform with resume builder, ATS Analysis Engine (keyword density, format compatibility, skill gap scoring), AI Mock Interview with voice interaction, 35+ premium templates, Admin Dashboard with real-time analytics, and full i18n (English/Arabic RTL).',
+            demoUrl: 'https://resume-ai-sigma.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/ResumeAI',
+            techStack: ['Angular 20', 'TypeScript', 'Firebase', 'Tailwind CSS', 'Angular Signals', 'RxJS', 'OpenRouter LLM', 'Angular SSR'],
+            imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800',
+            icon: 'file-text'
+        },
+        {
+            title: 'Eleve — E-commerce Platform',
+            description: 'Premium full-stack e-commerce platform with Redux Toolkit state management, Paymob payment integration, real-time transactions, order history, and a full admin dashboard with CRUD, CMS, and advanced filtering.',
+            demoUrl: 'https://eleve-ecommerce.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/Eleve',
+            techStack: ['Next.js 14', 'React 18', 'Node.js', 'Redux Toolkit', 'Tailwind CSS', 'Firebase', 'Paymob'],
+            imageUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800',
+            icon: 'shopping-cart'
+        },
+        {
+            title: 'Amazon Clone',
+            description: 'Full-stack e-commerce application with Firebase Auth, product management, shopping cart, and order tracking. Led the team as Team Lead managing Agile workflow via Trello and enforcing Git/GitHub best practices.',
+            demoUrl: 'https://amazon-clone-seven-opal.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/Amazon_Clone',
+            techStack: ['React.js', 'Bootstrap', 'Node.js', 'Firebase Auth', 'Firebase Realtime DB'],
+            imageUrl: 'https://images.unsplash.com/photo-1523474253046-7cd2ad070262?auto=format&fit=crop&q=80&w=800',
+            icon: 'package'
         }
     ];
 
