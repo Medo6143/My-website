@@ -1,0 +1,80 @@
+**Project 1: Smart Clinic — Healthcare SaaS**
+```
+Description:
+Multi-platform healthcare management SaaS targeting Egypt & MENA.
+Features ERP dashboard for clinic managers, patient web app,
+React Native mobile app, and WhatsApp-first appointment booking.
+Multi-tenant architecture with Firebase backend.
+
+Tech: React · Vite · Firebase · React Native · TypeScript · Tailwind
+Status: ~40% complete — actively developed
+
+Links:
+  🌐 Live: https://smartclinic-two.vercel.app/
+  💻 Dashboard Repo: https://github.com/Medo6143/smart-clinic-dashbord
+  💻 Main Repo: https://github.com/Medo6143/SMART-CLINIC
+```
+
+---
+
+**Project 2: ResumeAI — AI Resume Builder**
+```
+Description:
+AI-powered resume builder with ATS analysis, mock interview feature,
+35+ templates, and bilingual RTL/LTR support.
+Built to help Arabic & English speakers build career-ready CVs.
+
+Tech: Angular · TypeScript · Firebase · Claude API · Tailwind
+
+Links:
+  🌐 Live: https://resume-ai2-qbyk.vercel.app/login
+  💻 Repo: https://github.com/Medo6143/ResumeAi2/
+```
+
+---
+
+**Project 3: Èlevè — Premium E-Commerce Store**
+```
+Description:
+Premium Next.js e-commerce storefront with Firebase backend,
+Redux Toolkit state management, Paymob payment gateway integration,
+and a separate admin dashboard.
+
+Tech: Next.js · Firebase · Redux Toolkit · Paymob · TypeScript
+
+Links:
+  🌐 Live: https://store-eleve.vercel.app/
+  💻 Repo: https://github.com/Medo6143/STORE_ELEVE
+```
+
+---
+
+**Project 4: Aqar Masr — Real Estate Platform**
+```
+Description:
+Real estate listing platform for the Egyptian market.
+Property browsing, search/filter, and inquiry system.
+Arabic RTL UI with responsive design.
+
+Tech: React · Firebase · Tailwind CSS
+
+Links:
+  🌐 Live: https://aqarmasr-or81.vercel.app/
+```
+
+---
+
+**Other Projects (standard grid cards):**
+
+| Name | Live | Source | Tech |
+|---|---|---|---|
+| Amazon Clone | https://amazon-clone-seven-opal.vercel.app/ | https://github.com/Medo6143/Amazon_Clone | React · Firebase · Redux |
+| ChatME | https://chat-me-six-zeta.vercel.app/ | https://github.com/medo6143/ChatME | React · Firebase · Socket.io |
+| Ecommerce Store | https://ecommerce-store55.vercel.app/ | https://github.com/medo6143/ecommerce-store | React · Redux |
+| Movies App | https://movies-app-lilac-eta.vercel.app/ | https://github.com/Medo6143/Movies_app__ | React · API |
+| Karame El Sham | https://karame-elsham.vercel.app/ | https://github.com/Medo6143/Karame_ELSHAM | React |
+| Interior Design | https://inrerior-design.vercel.app/ | https://github.com/Medo6143/Inrerior_Design- | React |
+| Image Search | https://medo6143.github.io/image-search/ | https://github.com/medo6143/image-search | JavaScript · API |
+| Game XO | https://medo6143.github.io/game_xo/ | https://github.com/medo6143/game_xo | JavaScript |
+| Best Food | https://best-food-react-4060sdcuh-mohameds-projects-ea923384.vercel.app/ | https://github.com/medo6143/best-food | React |
+| Old Portfolio | https://portfolio-mohameds-projects-ea923384.vercel.app/ | https://github.com/medo6143/portfolio | React |

@@ -12,6 +12,13 @@ interface Project {
     icon: string;
 }
 
+interface MiniProject {
+    title: string;
+    demoUrl: string;
+    codeUrl: string;
+    tech: string[];
+}
+
 @Component({
     selector: 'app-projects',
     standalone: true,
@@ -32,49 +39,103 @@ export class ProjectsComponent implements AfterViewInit {
 
     projects: Project[] = [
         {
-            title: 'Owwab — أواب',
-            description: 'Production-grade offline-capable Islamic Android app with custom native Kotlin/Java modules — exact Azan scheduling, ForegroundService for background audio, Floating Tasbeeh Bubble, Quran reader, GPS-based prayer times, Qibla compass, Ibadah tracker, Zakat calculator, and home screen widget.',
-            demoUrl: '#',
-            codeUrl: 'https://github.com/Medo6143/owwab',
-            techStack: ['React Native', 'Expo SDK 54', 'TypeScript', 'Redux Toolkit', 'Kotlin/Java', 'NativeWind'],
-            imageUrl: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800',
-            icon: 'mosque'
-        },
-        {
             title: 'Smart Clinic',
-            description: 'Medical SaaS platform with 70+ features across 3 portals (Dashboard, Web, PWA). Includes offline mode, push notifications, OpenRouter LLM API for AI-driven follow-ups, Paymob payments, ICD-10 E-Prescription, and bilingual RTL/LTR UI.',
-            demoUrl: 'https://smartclinic-pwa.vercel.app/',
-            codeUrl: '#',
-            techStack: ['Next.js 14', 'Node.js', 'Express.js', 'Firebase', 'TypeScript', 'Paymob API', 'PWA', 'OpenRouter LLM'],
+            description: 'Multi-platform healthcare SaaS for Egypt & MENA. ERP dashboard, patient web app, React Native mobile, and WhatsApp-first booking. Multi-tenant Firebase architecture with AI-driven follow-ups, Paymob payments, ICD-10 E-Prescription, and bilingual RTL/LTR UI.',
+            demoUrl: 'https://smartclinic-two.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/SMART-CLINIC',
+            techStack: ['React', 'Vite', 'Firebase', 'React Native', 'TypeScript', 'Tailwind'],
             imageUrl: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800',
             icon: 'activity'
         },
         {
             title: 'ResumeAI',
-            description: 'AI-powered SaaS platform with resume builder, ATS Analysis Engine (keyword density, format compatibility, skill gap scoring), AI Mock Interview with voice interaction, 35+ premium templates, Admin Dashboard with real-time analytics, and full i18n (English/Arabic RTL).',
-            demoUrl: 'https://resume-ai-sigma.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/ResumeAI',
-            techStack: ['Angular 20', 'TypeScript', 'Firebase', 'Tailwind CSS', 'Angular Signals', 'RxJS', 'OpenRouter LLM', 'Angular SSR'],
+            description: 'AI-powered resume builder with ATS Analysis Engine, AI Mock Interview with voice interaction, 35+ premium templates, Admin Dashboard with real-time analytics, and full bilingual RTL/LTR support for Arabic & English speakers.',
+            demoUrl: 'https://resume-ai2-qbyk.vercel.app/login',
+            codeUrl: 'https://github.com/Medo6143/ResumeAi2/',
+            techStack: ['Angular', 'TypeScript', 'Firebase', 'Claude API', 'Tailwind'],
             imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800',
             icon: 'file-text'
         },
         {
-            title: 'Eleve — E-commerce Platform',
-            description: 'Premium full-stack e-commerce platform with Redux Toolkit state management, Paymob payment integration, real-time transactions, order history, and a full admin dashboard with CRUD, CMS, and advanced filtering.',
-            demoUrl: 'https://eleve-ecommerce.vercel.app/',
-            codeUrl: 'https://github.com/Medo6143/Eleve',
-            techStack: ['Next.js 14', 'React 18', 'Node.js', 'Redux Toolkit', 'Tailwind CSS', 'Firebase', 'Paymob'],
+            title: 'Èlevè Store',
+            description: 'Premium Next.js e-commerce storefront with Firebase backend, Redux Toolkit state management, Paymob payment gateway integration, real-time transactions, order history, and a full admin dashboard with CMS and advanced filtering.',
+            demoUrl: 'https://store-eleve.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/STORE_ELEVE',
+            techStack: ['Next.js', 'Firebase', 'Redux Toolkit', 'Paymob', 'TypeScript'],
             imageUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80&w=800',
-            icon: 'shopping-cart'
+            icon: 'shopping-bag'
         },
         {
+            title: 'Aqar Masr',
+            description: 'Real estate listing platform for the Egyptian market with property browsing, advanced search & filter, and an inquiry system. Fully Arabic RTL UI with responsive design built for mobile-first users.',
+            demoUrl: 'https://aqarmasr-or81.vercel.app/',
+            codeUrl: '#',
+            techStack: ['React', 'Firebase', 'Tailwind CSS'],
+            imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+            icon: 'map-pin'
+        }
+    ];
+
+    otherProjects: MiniProject[] = [
+        {
             title: 'Amazon Clone',
-            description: 'Full-stack e-commerce application with Firebase Auth, product management, shopping cart, and order tracking. Led the team as Team Lead managing Agile workflow via Trello and enforcing Git/GitHub best practices.',
             demoUrl: 'https://amazon-clone-seven-opal.vercel.app/',
             codeUrl: 'https://github.com/Medo6143/Amazon_Clone',
-            techStack: ['React.js', 'Bootstrap', 'Node.js', 'Firebase Auth', 'Firebase Realtime DB'],
-            imageUrl: 'https://images.unsplash.com/photo-1523474253046-7cd2ad070262?auto=format&fit=crop&q=80&w=800',
-            icon: 'package'
+            tech: ['React', 'Firebase', 'Redux']
+        },
+        {
+            title: 'ChatME',
+            demoUrl: 'https://chat-me-six-zeta.vercel.app/',
+            codeUrl: 'https://github.com/medo6143/ChatME',
+            tech: ['React', 'Firebase', 'Socket.io']
+        },
+        {
+            title: 'Ecommerce Store',
+            demoUrl: 'https://ecommerce-store55.vercel.app/',
+            codeUrl: 'https://github.com/medo6143/ecommerce-store',
+            tech: ['React', 'Redux']
+        },
+        {
+            title: 'Movies App',
+            demoUrl: 'https://movies-app-lilac-eta.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/Movies_app__',
+            tech: ['React', 'API']
+        },
+        {
+            title: 'Karame El Sham',
+            demoUrl: 'https://karame-elsham.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/Karame_ELSHAM',
+            tech: ['React']
+        },
+        {
+            title: 'Interior Design',
+            demoUrl: 'https://inrerior-design.vercel.app/',
+            codeUrl: 'https://github.com/Medo6143/Inrerior_Design-',
+            tech: ['React']
+        },
+        {
+            title: 'Image Search',
+            demoUrl: 'https://medo6143.github.io/image-search/',
+            codeUrl: 'https://github.com/medo6143/image-search',
+            tech: ['JavaScript', 'API']
+        },
+        {
+            title: 'Game XO',
+            demoUrl: 'https://medo6143.github.io/game_xo/',
+            codeUrl: 'https://github.com/medo6143/game_xo',
+            tech: ['JavaScript']
+        },
+        {
+            title: 'Best Food',
+            demoUrl: 'https://best-food-react-4060sdcuh-mohameds-projects-ea923384.vercel.app/',
+            codeUrl: 'https://github.com/medo6143/best-food',
+            tech: ['React']
+        },
+        {
+            title: 'Old Portfolio',
+            demoUrl: 'https://portfolio-mohameds-projects-ea923384.vercel.app/',
+            codeUrl: 'https://github.com/medo6143/portfolio',
+            tech: ['React']
         }
     ];
 
@@ -87,17 +148,13 @@ export class ProjectsComponent implements AfterViewInit {
 
     ngAfterViewInit() {
         if (this.isBrowser) {
-            // Slight delay to ensure DOM is ready and images/fonts are dimensioned
             setTimeout(() => this.initAnimations(), 100);
         }
     }
 
-    // --- Custom Cursor Logic ---
     @HostListener('mousemove', ['$event'])
     onMouseMove(event: MouseEvent) {
         if (!this.isBrowser || !this.customCursor) return;
-
-        // Move the custom cursor to follow the real mouse
         this.gsapService.gsap.to(this.customCursor.nativeElement, {
             x: event.clientX,
             y: event.clientY,
@@ -108,7 +165,6 @@ export class ProjectsComponent implements AfterViewInit {
 
     onCardHover(event: MouseEvent, index: number) {
         if (!this.isBrowser || !this.customCursor) return;
-        // Scale up and show the custom cursor
         this.gsapService.gsap.to(this.customCursor.nativeElement, {
             scale: 1,
             opacity: 1,
@@ -119,7 +175,6 @@ export class ProjectsComponent implements AfterViewInit {
 
     onCardLeave() {
         if (!this.isBrowser || !this.customCursor) return;
-        // Hide the custom cursor
         this.gsapService.gsap.to(this.customCursor.nativeElement, {
             scale: 0,
             opacity: 0,
@@ -131,7 +186,6 @@ export class ProjectsComponent implements AfterViewInit {
     private initAnimations() {
         const gsap = this.gsapService.gsap;
 
-        // 1. Cinematic Title Scene Animation
         const titleTl = gsap.timeline({
             scrollTrigger: {
                 trigger: this.projectsSection.nativeElement,
@@ -154,25 +208,21 @@ export class ProjectsComponent implements AfterViewInit {
                 }, "<0.2");
         }
 
-        // 2. Horizontal Scroll Implementation (The Magic)
         if (this.projectsTrack && this.horizontalScrollContainer) {
-
-            // Calculate total width to scroll
             const trackWidth = this.projectsTrack.nativeElement.scrollWidth;
             const viewportWidth = window.innerWidth;
 
-            // Only animate if the track is actually wider than the screen
             if (trackWidth > viewportWidth) {
                 gsap.to(this.projectsTrack.nativeElement, {
-                    x: () => -(trackWidth - viewportWidth + 100), // scroll length + padding
+                    x: () => -(trackWidth - viewportWidth + 100),
                     ease: "none",
                     scrollTrigger: {
                         trigger: this.horizontalScrollContainer.nativeElement,
                         pin: true,
                         start: "top top",
-                        end: () => `+=${trackWidth}`, // Pin duration depends on track width
-                        scrub: 1, // Smooth scrubbing
-                        invalidateOnRefresh: true, // Recalculate on resize
+                        end: () => `+=${trackWidth}`,
+                        scrub: 1,
+                        invalidateOnRefresh: true,
                     }
                 });
             }
